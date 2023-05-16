@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive rating component</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="rating-container">
+        <!-- Star container -->
+        <div class="icon">
+            <i class="fa fa-star"></i>
+        </div>    
+        <h1>How did we do?</h1>
+        <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+        <div class="numbers" id="number">
+            <div class="one" onclick="changeColor(0)">1</div>
+            <div class="two" onclick="changeColor(1)">2</div>
+            <div class="three" onclick="changeColor(2)">3</div>
+            <div class="four" onclick="changeColor(3)">4</div>
+            <div class="five" onclick="changeColor(4)">5</div>
+        </div>
+        <button class="btn" ><a href="thanks.html">Submit</a></button>
+    </div>
+</body>
+<script>
+    // To add color while clicking on number
+    var numberDiv = document.getElementById('number');
+    function changeColor(x) {
+        removeRating(x);
+        console.log(numberDiv.children[x]);
+        numberDiv.children[x].classList.toggle('change');
+    
+        }
+    // Function to disable other rating
+    function removeRating(x) {
+        for (let i = 0; i < numberDiv.children.length; i++) {
+         
+            numberDiv.children[i].classList.remove('change');
+            console.log(numberDiv.children[i]);
+            
+        }
+    }
+</script>
+</html>
